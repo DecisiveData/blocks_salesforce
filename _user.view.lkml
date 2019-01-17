@@ -69,7 +69,7 @@ view: _user {
 
   dimension_group: created {
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [raw, time, date, week, month]
     sql: ${TABLE}.created_date ;;
   }
 
