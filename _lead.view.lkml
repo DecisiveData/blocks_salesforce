@@ -1,5 +1,5 @@
 view: _lead {
-  sql_table_name: salesforce._lead ;;
+  sql_table_name: lead ;;
   # dimensions #
 
   dimension: id {
