@@ -55,7 +55,7 @@ view: account {
 
     filters: {
       field: account.type
-      value: "Customer - Direct, Customer - Channel"
+      value: "Customer - Direct, Customer - Channel, NULL"
     }
   }
 }
