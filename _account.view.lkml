@@ -56,7 +56,7 @@ view: _account {
 
   dimension_group: created {
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [raw, time, date, week, month]
     sql: ${TABLE}.created_date ;;
   }
 
@@ -100,19 +100,19 @@ view: _account {
 
   dimension_group: last_modified {
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [raw, time, date, week, month]
     sql: ${TABLE}.last_modified_date ;;
   }
 
   dimension_group: last_referenced {
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [raw, time, date, week, month]
     sql: ${TABLE}.last_referenced_date ;;
   }
 
   dimension_group: last_viewed {
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [raw, time, date, week, month]
     sql: ${TABLE}.last_viewed_date ;;
   }
 
@@ -207,7 +207,7 @@ view: _account {
 
   dimension_group: system_modstamp {
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [raw, time, date, week, month]
     sql: ${TABLE}.system_modstamp ;;
   }
 

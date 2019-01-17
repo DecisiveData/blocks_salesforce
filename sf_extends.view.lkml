@@ -4,10 +4,6 @@ view: account {
   extends: [_account]
   # dimensions #
 
-  dimension: created {
-    #X# Invalid LookML inside "dimension": {"timeframes":["date","week","month","raw"]}
-  }
-
   dimension: business_segment {
     type: string
 
@@ -66,10 +62,6 @@ view: account {
 
 view: lead {
   extends: [_lead]
-
-  dimension: created {
-    #X# Invalid LookML inside "dimension": {"timeframes":["time","date","week","month","raw"]}
-  }
 
   dimension: name {
     html: <a href="https://na9.salesforce.com/{{ lead.id._value }}" target="_new">
@@ -205,17 +197,9 @@ view: opportunity {
     }
   }
 
-  dimension: created {
-    #X# Invalid LookML inside "dimension": {"timeframes":["date","week","month","raw"]}
-  }
-
-  dimension: close {
-    #X# Invalid LookML inside "dimension": {"timeframes":["date","week","month","raw"]}
-  }
-
   dimension: days_open {
     type: number
-    sql: datediff(days, ${created}, coalesce(${close}, current_date) ) ;;
+    sql: datediff(days, ${created_raw}, coalesce(${close_raw}, current_date) ) ;;
   }
 
   dimension: created_to_closed_in_60 {
@@ -396,13 +380,9 @@ view: user {
        ;;
   }
 
-  dimension: created {
-    #X# Invalid LookML inside "dimension": {"timeframes":["date","week","month","raw"]}
-  }
-
   dimension: age_in_months {
     type: number
-    sql: datediff(days,${created},current_date) ;;
+    sql: datediff(days,${created_raw},current_date) ;;
   }
 
   measure: average_revenue_pipeline {
