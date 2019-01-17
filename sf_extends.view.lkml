@@ -215,7 +215,7 @@ view: opportunity {
 
   dimension: days_open {
     type: number
-    sql: datediff(days, ${created_raw}, coalesce(${close_raw}, current_date) ) ;;
+    sql: datediff(days, ${created}, coalesce(${close}, current_date) ) ;;
   }
 
   dimension: created_to_closed_in_60 {
@@ -402,7 +402,7 @@ view: user {
 
   dimension: age_in_months {
     type: number
-    sql: datediff(days,${created_raw},current_date) ;;
+    sql: datediff(days,${created},current_date) ;;
   }
 
   measure: average_revenue_pipeline {
